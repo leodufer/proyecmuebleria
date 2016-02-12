@@ -207,32 +207,6 @@
 
 
 
-
-
-
-
-<!-- Spring security -->
-<dependency>
-<groupId>org.springframework.security</groupId>
-<artifactId>spring-security-config</artifactId>
-<version>4.0.0.M2</version>
-</dependency>
-<dependency>
-<groupId>org.springframework.security</groupId>
-<artifactId>spring-security-taglibs</artifactId>
-<version>4.0.0.M2</version>
-</dependency>
-<dependency>
-<groupId>org.springframework.security</groupId>
-<artifactId>spring-security-web</artifactId>
-<version>4.0.0.M2</version>
-</dependency>
-<dependency>
-<groupId>org.springframework.security</groupId>
-<artifactId>spring-security-core</artifactId>
-<version>4.0.0.M2</version>
-</dependency>
-
 <dependency>
 	<groupId>junit</groupId>
 	<artifactId>junit</artifactId>
@@ -253,23 +227,6 @@
 <version>4.1.0.RELEASE</version>
 <scope>test</scope>
 </dependency>
-
-<dependency>
-<groupId>org.springframework.security</groupId>
-<artifactId>spring-security-test</artifactId>
-<version>4.0.0.M2</version>
-<scope>test</scope>
-</dependency>	
-
-<dependency>
-<groupId>org.springframework.security</groupId>
-<artifactId>spring-security-test</artifactId>
-<version>4.0.0.M2</version>
-<scope>test</scope>
-</dependency>
-
-
-
 
 
 	<!-- cache -->
