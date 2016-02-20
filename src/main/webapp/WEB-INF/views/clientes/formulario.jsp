@@ -11,7 +11,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Formulario de Registro de Cliente</title>
 
-<!-- web:    java $JAVA_OPTS -jar target/dependency/webapp-runner.jar --port $PORT target/*.war -->
 
 <link rel="stylesheet" type="text/css" href="resources/css/bootstrap-3.3.6-dist/css/bootstrap.css">
 
