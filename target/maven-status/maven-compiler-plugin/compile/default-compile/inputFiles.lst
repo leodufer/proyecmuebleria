@@ -1,4 +1,9 @@
+F:\JAVA\mavenproyectos\proyectomuebleria\src\main\java\py\muebles\negocio\controller\ClienteController.java
+F:\JAVA\mavenproyectos\proyectomuebleria\src\main\java\py\muebles\negocio\model\Cliente.java
 F:\JAVA\mavenproyectos\proyectomuebleria\src\main\java\py\muebles\negocio\conf\ServletSpringMVC.java
+F:\JAVA\mavenproyectos\proyectomuebleria\src\main\java\py\muebles\negocio\dao\DaoGenerico.java
+F:\JAVA\mavenproyectos\proyectomuebleria\src\main\java\py\muebles\negocio\validation\ClienteValidator.java
+F:\JAVA\mavenproyectos\proyectomuebleria\src\main\java\py\muebles\negocio\dao\ClienteDAO.java
 F:\JAVA\mavenproyectos\proyectomuebleria\src\main\java\py\muebles\negocio\conf\AppWebConfiguration.java
 F:\JAVA\mavenproyectos\proyectomuebleria\src\main\java\py\muebles\negocio\controller\HomeController.java
 F:\JAVA\mavenproyectos\proyectomuebleria\src\main\java\py\muebles\negocio\conf\JPAConfiguration.java
