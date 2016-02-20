@@ -21,7 +21,7 @@
     
     
   </properties>
-  <build>
+  	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -68,7 +68,6 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 
 
@@ -199,11 +198,19 @@
 <artifactId>hibernate-validator</artifactId>
 <version>4.1.0.Final</version>
 </dependency>
+<!-- <dependency> -->
+<!-- 	<groupId>postgresql</groupId> -->
+<!-- 	<artifactId>postgresql</artifactId> -->
+<!-- 	<version>9.0-801.jdbc4</version> -->
+<!-- </dependency> -->
+
+
 <dependency>
 	<groupId>postgresql</groupId>
 	<artifactId>postgresql</artifactId>
-	<version>9.0-801.jdbc4</version>
+	<version>8.2-511.jdbc3</version>
 </dependency>
+
 
 
 
