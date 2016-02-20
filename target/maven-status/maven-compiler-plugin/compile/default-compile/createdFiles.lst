@@ -1,0 +1,10 @@
+py\muebles\negocio\conf\JPAConfiguration.class
+py\muebles\negocio\conf\AppWebConfiguration.class
+py\muebles\negocio\conf\JPAProductionConfiguration.class
+py\muebles\negocio\controller\HomeController.class
+py\muebles\negocio\validation\ClienteValidator.class
+py\muebles\negocio\model\Cliente.class
+py\muebles\negocio\dao\DaoGenerico.class
+py\muebles\negocio\dao\ClienteDAO.class
+py\muebles\negocio\conf\ServletSpringMVC.class
+py\muebles\negocio\controller\ClienteController.class
