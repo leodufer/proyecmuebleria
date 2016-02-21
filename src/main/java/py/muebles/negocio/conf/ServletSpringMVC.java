@@ -65,7 +65,7 @@ public class ServletSpringMVC extends AbstractAnnotationConfigDispatcherServletI
 		super.onStartup(servletContext);
 		servletContext.addListener(RequestContextListener.class);
 		servletContext.setInitParameter(
-				AbstractEnvironment.DEFAULT_PROFILES_PROPERTY_NAME, "prod");
+				AbstractEnvironment.DEFAULT_PROFILES_PROPERTY_NAME, "dev");
 
 	}
 
