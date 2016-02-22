@@ -1,5 +1,7 @@
 package py.muebles.negocio.dao;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
@@ -9,29 +11,55 @@ import org.springframework.stereotype.Repository;
 import py.muebles.negocio.model.Cliente;
 
 
+//@Repository
+//public class ClienteDAO extends DaoGenerico<Cliente> {
+//	// @PersistenceContext(unitName="entidadpu")
+//	
+//	private  EntityManagerFactory factory;
+//	
+//	@PersistenceContext
+//	private  EntityManager em;
+//
+//	public ClienteDAO() {
+//		super(Cliente.class);
+//		}
+//	
+//
+//	@Override
+//	protected EntityManager getEntityManager() {
+//		return this.em;
+//	}
+//
+//	@Override
+//	protected EntityManagerFactory getFactory() {
+//		// TODO Auto-generated method stub
+//		return factory;
+//	}
+//	
+//}
+
 @Repository
-public class ClienteDAO extends DaoGenerico<Cliente> {
-	// @PersistenceContext(unitName="entidadpu")
+public class ClienteDAO{
 	
-	private  EntityManagerFactory factory;
-	
+
 	@PersistenceContext
-	private  EntityManager em;
+	private EntityManager manager;
 
-	public ClienteDAO() {
-		super(Cliente.class);
-		}
+	public void guardar(Cliente produto,Integer id) {
+		manager.persist(produto);
+	}
 	
-
-	@Override
-	protected EntityManager getEntityManager() {
-		return this.em;
+	public List<Cliente> getLista(){
+		return manager.createQuery(
+				"select c from Cliente c",
+				Cliente.class).getResultList();
 	}
 
-	@Override
-	protected EntityManagerFactory getFactory() {
-		// TODO Auto-generated method stub
-		return factory;
-	}
 	
 }
+
+
+
+
+
+

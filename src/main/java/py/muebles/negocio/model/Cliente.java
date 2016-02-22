@@ -25,9 +25,9 @@ public class Cliente{
 	private String observacion;
 	
 	
-	public Cliente() {
-		super();
-	}
+//	public Cliente() {
+//		super();
+//	}
 	public Integer getId() {
 		return id;
 	}
