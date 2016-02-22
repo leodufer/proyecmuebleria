@@ -1,16 +1,12 @@
 package py.muebles.negocio.conf;
 
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.Properties;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
-import org.springframework.core.env.Environment;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -24,12 +20,8 @@ import org.springframework.context.annotation.Configuration;
 @EnableTransactionManagement
 public class JPAConfiguration {
 	
-
-	   @Autowired
-	   private Environment environment;
-	
 	@Bean
-	public LocalContainerEntityManagerFactoryBean entityManagerFactory() throws URISyntaxException{
+	public LocalContainerEntityManagerFactoryBean entityManagerFactory(){
 	LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 	em.setDataSource(dataSource());
 	em.setPackagesToScan(new String[] { "py.muebles.negocio.model" });
@@ -71,30 +63,19 @@ public class JPAConfiguration {
 	
 	@Bean
 	@Profile("dev")
-	public DataSource dataSource() throws URISyntaxException{
+	public DataSource dataSource(){
 		
 		
 		
-//	DriverManagerDataSource dataSource =
-//	new DriverManagerDataSource();
-//	dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-//	dataSource.setUrl(
-//	"jdbc:mysql://localhost:3306/muebles");
-//	dataSource.setUsername("root");
-//	dataSource.setPassword("");
-		
-		 DriverManagerDataSource dataSource = new DriverManagerDataSource();
-	      dataSource.setDriverClassName("org.postgresql.Driver");
-	      URI dbUrl = new URI(environment.getProperty("DATABASE_URL"));
-		  dataSource.setUrl("jdbc:postgresql://" + dbUrl.getHost() + ":" + dbUrl.getPort() + dbUrl.getPath());
-		  dataSource.setUsername(dbUrl.getUserInfo().split(":")[0]);
-		  dataSource.setPassword(dbUrl.getUserInfo().split(":")[1]);
-		  
-	      
-	      
-	      System.out.println("Ingrese en modo de developer en la pc de Magno Portillo");
-		
-		
+	DriverManagerDataSource dataSource =
+	new DriverManagerDataSource();
+	dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+	dataSource.setUrl(
+	"jdbc:mysql://localhost:3306/muebles");
+	dataSource.setUsername("root");
+	dataSource.setPassword("");
+	
+	System.out.println("Entre en modo de desarrollo dev");
 	return dataSource;
 	}
 	
