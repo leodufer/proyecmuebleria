@@ -7,6 +7,7 @@ import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
+import org.springframework.core.env.Environment;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -22,9 +23,9 @@ import org.springframework.context.annotation.Configuration;
 public class JPAConfiguration {
 	
 	@Bean
-	public LocalContainerEntityManagerFactoryBean entityManagerFactory(){
+	public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource){
 	LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-	em.setDataSource(dataSource());
+	em.setDataSource(dataSource);
 	em.setPackagesToScan(new String[] { "py.muebles.negocio.model" });
 	JpaVendorAdapter vendorAdapter =new HibernateJpaVendorAdapter();
 	em.setJpaVendorAdapter(vendorAdapter);
@@ -59,7 +60,7 @@ public class JPAConfiguration {
 	
 	@Bean
 	@Profile("dev")
-	public DataSource dataSource(){
+	public DataSource dataSource(Environment environment){
 		
 	DriverManagerDataSource dataSource =
 	new DriverManagerDataSource();
