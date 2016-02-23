@@ -18,7 +18,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.context.annotation.Configuration;
 
-//@Configuration
+@Configuration
 @EnableTransactionManagement
 public class JPAConfiguration {
 	
@@ -45,7 +45,7 @@ public class JPAConfiguration {
 	 Properties additionalProperties() {
 		Properties properties = new Properties();
 		properties.setProperty("hibernate.hbm2ddl.auto","update");
-	//	properties.setProperty("hibernate.dialect","org.hibernate.dialect.MySQL5Dialect");
+		properties.setProperty("hibernate.dialect","org.hibernate.dialect.MySQL5Dialect");
 				properties.setProperty("hibernate.show_sql", "true");
 				return properties;
 				}
@@ -61,7 +61,6 @@ public class JPAConfiguration {
 	@Bean
 	@Profile("dev")
 	public DataSource dataSource(Environment environment){
-		
 	DriverManagerDataSource dataSource =
 	new DriverManagerDataSource();
 	dataSource.setDriverClassName("com.mysql.jdbc.Driver");
@@ -69,7 +68,6 @@ public class JPAConfiguration {
 	"jdbc:mysql://localhost:3306/muebles");
 	dataSource.setUsername("root");
 	dataSource.setPassword("");
-	
 	System.out.println("Entre en modo de desarrollo dev");
 	return dataSource;
 	}
