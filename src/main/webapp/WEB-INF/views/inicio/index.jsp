@@ -11,7 +11,11 @@
 <link rel="stylesheet" href="resources/css/fonts.css">
 
 <script type="text/javascript" src="resources/js/jquery-latest.js"></script>
-<script type="text/javascript" src="resources/js/main.js"></script></head>
+<script type="text/javascript" src="resources/js/main.js"></script>
+
+
+
+</head>
 <body>
 
 
@@ -36,9 +40,9 @@
 				</li>
 				<li class="submenu">
 <!-- 				Agregar icono de navegación si necesario    icon-circle-down-->
-				<a href="#"><span class="icon-list"></span>Proyectos<span class=""></span></a>
+				<a href="#"><span class="icon-list"></span>Registro<span class=""></span></a>
 					<ul class="children">
-					<li><a href="#">Sub Elemento #1 <span class="icon-radio-checked"></span></a></li>
+					<li><a href="clientes/formulario">Registrarse como Cliente<span class="icon-radio-checked"></span></a></li>
 					<li><a href="#">Sub Elemento #2 <span class="icon-radio-checked"></span></a></li>
 					<li><a href="#">Sub Elemento #3 <span class="icon-radio-checked"></span></a></li>
 					<li><a href="#">Sub Elemento #4 <span class="icon-radio-checked"></span></a></li>

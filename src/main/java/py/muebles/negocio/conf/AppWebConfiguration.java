@@ -27,12 +27,14 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.google.common.cache.CacheBuilder;
 
+import py.muebles.negocio.controller.ClienteController;
 import py.muebles.negocio.controller.HomeController;
+import py.muebles.negocio.dao.ClienteDAO;
 
 
 //Revisar ..recien realize el extends ??
 @EnableWebMvc
-@ComponentScan(basePackageClasses={HomeController.class})
+@ComponentScan(basePackageClasses={HomeController.class,ClienteDAO.class})
 @EnableCaching
 public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 	

@@ -7,6 +7,8 @@ import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
+import org.springframework.core.env.Environment;
+import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -21,9 +23,9 @@ import org.springframework.context.annotation.Configuration;
 public class JPAConfiguration {
 	
 	@Bean
-	public LocalContainerEntityManagerFactoryBean entityManagerFactory(){
+	public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource){
 	LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-	em.setDataSource(dataSource());
+	em.setDataSource(dataSource);
 	em.setPackagesToScan(new String[] { "py.muebles.negocio.model" });
 	JpaVendorAdapter vendorAdapter =new HibernateJpaVendorAdapter();
 	em.setJpaVendorAdapter(vendorAdapter);
@@ -34,21 +36,16 @@ public class JPAConfiguration {
 	
 	
 	
-//	@Bean
-//	public DataSource dataSource(){
-//	DriverManagerDataSource dataSource =new DriverManagerDataSource();
-//	dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-//	dataSource.setUrl("jdbc:mysql://localhost:3306/casadocodigo");
-//	dataSource.setUsername("root");
-//	dataSource.setPassword("");
-//	return dataSource;
-//	}
-//	
 	
-	private Properties additionalProperties() {
+	 @Bean
+	   public PersistenceExceptionTranslationPostProcessor exceptionTranslation(){
+	      return new PersistenceExceptionTranslationPostProcessor();
+	   }
+	
+	 Properties additionalProperties() {
 		Properties properties = new Properties();
 		properties.setProperty("hibernate.hbm2ddl.auto","update");
-		properties.setProperty("hibernate.dialect","org.hibernate.dialect.MySQL5Dialect");
+	//	properties.setProperty("hibernate.dialect","org.hibernate.dialect.MySQL5Dialect");
 				properties.setProperty("hibernate.show_sql", "true");
 				return properties;
 				}
@@ -63,7 +60,7 @@ public class JPAConfiguration {
 	
 	@Bean
 	@Profile("dev")
-	public DataSource dataSource(){
+	public DataSource dataSource(Environment environment){
 	DriverManagerDataSource dataSource =
 	new DriverManagerDataSource();
 	dataSource.setDriverClassName("com.mysql.jdbc.Driver");
@@ -71,6 +68,7 @@ public class JPAConfiguration {
 	"jdbc:mysql://localhost:3306/muebles");
 	dataSource.setUsername("root");
 	dataSource.setPassword("");
+	System.out.println("Entre en modo de desarrollo dev");
 	return dataSource;
 	}
 	

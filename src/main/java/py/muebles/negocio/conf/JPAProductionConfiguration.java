@@ -25,6 +25,13 @@ public class JPAProductionConfiguration {
 		  dataSource.setUrl("jdbc:postgresql://" + dbUrl.getHost() + ":" + dbUrl.getPort() + dbUrl.getPath());
 		  dataSource.setUsername(dbUrl.getUserInfo().split(":")[0]);
 		  dataSource.setPassword(dbUrl.getUserInfo().split(":")[1]);
-	      return dataSource;
+		  
+	      
+	      
+	      System.out.println("Ingrese en modo de produccion en la pc de Magno Portillo");
+//		  dataSource.setUrl("postgres://wqckckvvegdzog:6t6X_k6aLGKUgEbAqF-8WR-qwQ@ec2-54-221-201-165.compute-1.amazonaws.com:5432/de6j76rhamlv2g");
+//		  dataSource.setUsername("wqckckvvegdzog");
+//		  dataSource.setPassword("6t6X_k6aLGKUgEbAqF-8WR-qwQ");
+	    return dataSource;
 	   }	
 }
