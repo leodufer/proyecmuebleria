@@ -11,7 +11,11 @@
 <link rel="stylesheet" href="resources/css/fonts.css">
 
 <script type="text/javascript" src="resources/js/jquery-latest.js"></script>
-<script type="text/javascript" src="resources/js/main.js"></script></head>
+<script type="text/javascript" src="resources/js/main.js"></script>
+
+
+
+</head>
 <body>
 
 
