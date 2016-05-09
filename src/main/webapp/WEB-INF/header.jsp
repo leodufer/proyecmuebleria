@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>	
+
 <head>
 
 <title>Menu</title>
@@ -13,55 +12,14 @@
 <script type="text/javascript" src="resources/js/jquery-latest.js"></script>
 <script type="text/javascript" src="resources/js/main.js"></script>
 
-
-<style type="text/css">
-
-/* .embed-container { */
-/*     position: relative; */
-/*     padding-bottom: 56.25%; */
-/*     height: 0; */
-/*     overflow: hidden; */
-/* } */
-
-/* .embed-container iframe { */
-/*     position: absolute; */
-/*     top:0; */
-/*     left: 0; */
-/*     width: 100%; */
-/*     height: 100%; */
-/* } */
-
-.embed-container {
-    position: relative;
-    height: 0;
-    overflow: hidden;
-}
-
-.16by9 {
-    padding-bottom: 56.25%;
-}
-.4by3 {
-    padding-bottom: 75%;
-}
-.embed-container iframe {
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-</style>
-
-
-
-
 </head>
-<body>
 
+<!-- id="layout-header" -->
+	
+	<header >
+	
 
-<header>
-		<div class="menu_bar">
+<div class="menu_bar">
 			<a href="#" class="bt-menu"><span class="icon-menu"></span>Menu</a>
 		</div>
  
@@ -83,7 +41,7 @@
 <!-- 				Agregar icono de navegación si necesario    icon-circle-down-->
 				<a href="#"><span class="icon-list"></span>Registro<span class=""></span></a>
 					<ul class="children">
-					<li><a href="clientes/formulario">Registrarse como Cliente<span class="icon-radio-checked"></span></a></li>
+					<li><a href="clientes/formulario" target="principal">Registrarse como Cliente<span class="icon-radio-checked"></span></a></li>
 					<li><a href="#">Sub Elemento #2 <span class="icon-radio-checked"></span></a></li>
 					<li><a href="#">Sub Elemento #3 <span class="icon-radio-checked"></span></a></li>
 					<li><a href="#">Sub Elemento #4 <span class="icon-radio-checked"></span></a></li>
@@ -129,31 +87,17 @@
 				
 			</ul>
 		</nav>
-	</header>
+
 	
 	
-	<section>
-	
-	<article>
 	
 	
-	<div class="embed-container">
-	<iframe  id="principal" name="principal">
+<!-- 	<div class="embed-container"> -->
+<!-- 	<iframe  id="principal" name="principal"> -->
     
-    </iframe>
+<!--     </iframe> -->
 	
-	</div>
-	
-	
+<!-- 	</div> -->
 	
 	
-	
-	</article>
-	</section>
-	
-
-
-
-
-</body>
-</html>
+</header>

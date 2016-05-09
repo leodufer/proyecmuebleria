@@ -1,20 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+    
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@taglib tagdir="/WEB-INF/tags" prefix="customTags"%>
+
+
+<%-- <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %> --%>
 <%-- <%@taglib uri="http://www.springframework.org/security/tags" prefix="security" %>     --%>
     
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Formulario de Registro de Cliente</title>
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> -->
+<!-- <html> -->
+<!-- <head> -->
+<!-- <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"> -->
+<!-- <title>Formulario de Registro de Cliente</title> -->
 
 
-<link rel="stylesheet" type="text/css" href="resources/css/bootstrap-3.3.6-dist/css/bootstrap.css">
+<!-- <link rel="stylesheet" type="text/css" href="resources/css/bootstrap-3.3.6-dist/css/bootstrap.css"> -->
+
+<!-- </head> -->
+<!-- class="panel panel-primary" -->
+
+<customTags:page bodyClass="panel panel-primary" title="" >
+
+
+<jsp:attribute name="extraScripts">
+
 
 <style type="text/css">
+
+
 
 #formulario{
 
@@ -38,11 +55,20 @@ body {
 </style>
 
 
+</jsp:attribute>
 
 
 
-</head>
-<body class="panel panel-primary">
+
+
+
+<jsp:body>
+
+
+
+
+
+<!-- <body class="panel panel-primary"> -->
 
 <div class="panel-heading">
 			Registrese para una atención personalizada
@@ -109,5 +135,12 @@ body {
 
 
 
-</body>
-</html>
+<!-- </body> -->
+
+	
+
+
+</jsp:body>
+</customTags:page>
+
+<!-- </html> -->

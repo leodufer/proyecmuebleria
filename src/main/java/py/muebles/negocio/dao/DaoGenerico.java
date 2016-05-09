@@ -16,7 +16,6 @@ public abstract class DaoGenerico<T> {
 	}
 	
 	protected abstract EntityManager getEntityManager();
-	protected abstract EntityManagerFactory getFactory();
 	
 	
 	public void insertar(T entity){
@@ -107,13 +106,13 @@ getEntityManager().getTransaction().commit();//Cierre de la transaccion
 	
 	}
 	
-	public void cerrarFactory(){
-		if(getFactory().isOpen()){
-			getFactory().close();
-			
-		}
-		
-	}
+//	public void cerrarFactory(){
+//		if(getFactory().isOpen()){
+//			getFactory().close();
+//			
+//		}
+//		
+//	}
 	
 	
 

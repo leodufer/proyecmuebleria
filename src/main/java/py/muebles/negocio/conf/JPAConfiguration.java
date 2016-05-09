@@ -46,7 +46,11 @@ public class JPAConfiguration {
 		Properties properties = new Properties();
 		properties.setProperty("hibernate.hbm2ddl.auto","update");
 	//	properties.setProperty("hibernate.dialect","org.hibernate.dialect.MySQL5Dialect");
-				properties.setProperty("hibernate.show_sql", "true");
+		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
+
+	
+		
+		properties.setProperty("hibernate.show_sql", "true");
 				return properties;
 				}
 	
@@ -58,19 +62,33 @@ public class JPAConfiguration {
 	}
 	
 	
+//	@Bean
+//	@Profile("dev")
+//	public DataSource dataSource(Environment environment){
+//	DriverManagerDataSource dataSource =
+//	new DriverManagerDataSource();
+//	dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+//	dataSource.setUrl(
+//	"jdbc:mysql://localhost:3306/muebles");
+//	dataSource.setUsername("root");
+//	dataSource.setPassword("");
+//	System.out.println("Entre en modo de desarrollo dev");
+//	return dataSource;
+//	}
+	
 	@Bean
 	@Profile("dev")
-	public DataSource dataSource(Environment environment){
+	public DataSource dataSource(){
 	DriverManagerDataSource dataSource =
 	new DriverManagerDataSource();
-	dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+	dataSource.setDriverClassName("org.postgresql.Driver");
 	dataSource.setUrl(
-	"jdbc:mysql://localhost:3306/muebles");
-	dataSource.setUsername("root");
-	dataSource.setPassword("");
-	System.out.println("Entre en modo de desarrollo dev");
+	"jdbc:postgresql://localhost:5432/proyectomuebleria");
+	dataSource.setUsername("postgres");
+	dataSource.setPassword("12345");
 	return dataSource;
 	}
+
 	
 
 }
