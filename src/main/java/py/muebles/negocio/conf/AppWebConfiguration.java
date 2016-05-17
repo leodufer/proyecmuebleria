@@ -88,7 +88,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 	return conversionService;
 	}
 	
-	//A interface MultipartResolver é a que define os métodos necessários
+	//A interface MultipartResolver ï¿½ a que define os mï¿½todos necessï¿½rios
 	//para o tratamento inicial de um request cujo modo de envio,
 	@Bean
 	public MultipartResolver multipartResolver(){
@@ -101,7 +101,7 @@ public class AppWebConfiguration extends WebMvcConfigurerAdapter {
 	InternalResourceViewResolver resolver =
 	new InternalResourceViewResolver();
 	resolver.setPrefix("/WEB-INF/views/");
-	resolver.setSuffix(".jsp");
+	resolver.setSuffix(".html");
 	//passamos o exato nome da classe que serÃ¡ registrada
 	resolver.setExposedContextBeanNames("shoppingCart");
 	return resolver;

@@ -16,7 +16,6 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.context.annotation.Configuration;
 
 //@Configuration
 @EnableTransactionManagement
@@ -45,8 +44,8 @@ public class JPAConfiguration {
 	 Properties additionalProperties() {
 		Properties properties = new Properties();
 		properties.setProperty("hibernate.hbm2ddl.auto","update");
-	//	properties.setProperty("hibernate.dialect","org.hibernate.dialect.MySQL5Dialect");
-		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
+		properties.setProperty("hibernate.dialect","org.hibernate.dialect.MySQL5Dialect");
+	//	properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
 
 	
 		
@@ -62,32 +61,32 @@ public class JPAConfiguration {
 	}
 	
 	
-//	@Bean
-//	@Profile("dev")
-//	public DataSource dataSource(Environment environment){
-//	DriverManagerDataSource dataSource =
-//	new DriverManagerDataSource();
-//	dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-//	dataSource.setUrl(
-//	"jdbc:mysql://localhost:3306/muebles");
-//	dataSource.setUsername("root");
-//	dataSource.setPassword("");
-//	System.out.println("Entre en modo de desarrollo dev");
-//	return dataSource;
-//	}
-	
 	@Bean
 	@Profile("dev")
-	public DataSource dataSource(){
+	public DataSource dataSource(Environment environment){
 	DriverManagerDataSource dataSource =
 	new DriverManagerDataSource();
-	dataSource.setDriverClassName("org.postgresql.Driver");
+	dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 	dataSource.setUrl(
-	"jdbc:postgresql://localhost:5432/proyectomuebleria");
-	dataSource.setUsername("postgres");
-	dataSource.setPassword("12345");
+	"jdbc:mysql://localhost:3306/muebles");
+	dataSource.setUsername("root");
+	dataSource.setPassword("");
+	System.out.println("Entre en modo de desarrollo dev");
 	return dataSource;
 	}
+	
+//	@Bean
+//	@Profile("dev")
+//	public DataSource dataSource(){
+//	DriverManagerDataSource dataSource =
+//	new DriverManagerDataSource();
+//	dataSource.setDriverClassName("org.postgresql.Driver");
+//	dataSource.setUrl(
+//	"jdbc:postgresql://localhost:5432/proyectomuebleria");
+//	dataSource.setUsername("postgres");
+//	dataSource.setPassword("12345");
+//	return dataSource;
+//	}
 
 	
 

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="productosapp">
+<head>
+	<title>Productos</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="resources/css/bootstrap-3.3.6-dist/css/bootstrap.css">
+	<script type="text/javascript" src="resources/js/jquery-latest.js"></script>
+	<script type="text/javascript" src="resources/js/angular/angular.js"></script>
+	<script type="text/javascript" src="resources/js/main.js"></script>
+</head>
+<body class="container" ng-controller="ProductController as product">
+
+	<h1>Productos</h1>
+	<hr>
+	<div class="row">
+		<div class="col-md-8">
+			<input type="text" placehoder="Buscar" ng-model="product.filtro" class="form-control">
+			<table class="table table-hover">
+				<thead>
+					<th>#</th>
+					<th>Descripcion</th>
+					<th>Precio</th>
+				</thead>
+				<tbody>
+					<tr ng-repeat="producto in product.productos | filter:product.filtro ">
+						<td>{{producto.id}}</td>
+						<td>{{producto.descripcion}}</td>
+						<td>{{producto.precio}}</td>
+						<td><a href="#" ng-click="product.edit(producto)"><span class="glyphicon glyphicon-pencil"></span></a></td>
+						<td><a href="#"><span class="glyphicon glyphicon-trash"></span></a></td>
+						<td>{{$index}}</td>
+					</tr>
+				</tbody>
+			</table>
+	</div>
+		<div class="col-md-4">
+			<form ng-submit="product.save(product.producto)">
+				<input type="text" ng-model="product.producto.descripcion" class="form-control" placeholder="Descripcion" required>
+				<br>
+				<input type="number" ng-model="product.producto.precio" class="form-control" placeholder="Precio" required>
+				<br>
+				<input type="submit" value="Guardar" class="btn btn-danger">
+				<button class="btn btn-default" ng-click="product.cancel()">Cancelar</button>
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>

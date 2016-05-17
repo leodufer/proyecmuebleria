@@ -13,7 +13,7 @@ public class HomeController {
 	public ModelAndView index(){
 		
 		System.out.println("Ingrese en el inicio");
-		ModelAndView modelAndView =new ModelAndView("inicio/index");
+		ModelAndView modelAndView =new ModelAndView("index");
 				return modelAndView;	
 	}
 	

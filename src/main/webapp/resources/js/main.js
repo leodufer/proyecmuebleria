@@ -1,29 +1,36 @@
-/**
- * 
- */
+(function() {
+	angular.module('productosapp',[])
+		.controller('ProductController',productController);
 
+	function productController($http){
+		var self = this;
 
-$(document).ready(main);
- 
-var contador = 1;
- 
-function main () {
-	$('.menu_bar').click(function(){
-		if (contador == 1) {
-			$('nav').animate({
-				left: '0'
-			});
-			contador = 0;
-		} else {
-			contador = 1;
-			$('nav').animate({
-				left: '-100%'
-			});
-		}
-	});
- 
-	// Mostramos y ocultamos submenus
-	$('.submenu').click(function(){
-		$(this).children('.children').slideToggle();
-	});
-}
+		self.get = function (){
+			$http.get('api/productos.json')
+				.success(function(data) {
+					self.productos = data.productos;
+				});
+		};
+		
+		self.get();
+			
+		
+		self.save = function(producto){
+			$http.post('api/productos',producto)
+				.success(function(data){
+					console.log(data);
+					self.producto = undefined;
+					self.get();
+				});
+		};
+		
+		self.edit = function (producto) {
+			self.producto = producto;
+		};
+		
+		self.cancel = function () {
+			self.producto = undefined;
+		};
+	}
+
+})();
